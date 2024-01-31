@@ -1,6 +1,7 @@
 import select from 'select-dom'
 import { IS_FACEIT_BETA } from '../shared/faceit-beta'
 import storage from '../shared/storage'
+import addEseaMatchesStatistics from './features/add-esea-matches-statistics'
 import addHeaderLevelProgress from './features/add-header-level-progress'
 import addMatchRoomEloEstimation from './features/add-match-room-elo-estimation'
 import addMatchRoomPlayerBadges from './features/add-match-room-player-badges'
@@ -167,6 +168,9 @@ function observeBody() {
         if (pages.isPlayerProfileStats()) {
           addPlayerProfileStatsFeatures()
         }
+      } else if (pages.isESEATeamProfile()) {
+        //TODO: Add esea match stats
+        addEseaMatchesStatistics()
       }
     }
   })
