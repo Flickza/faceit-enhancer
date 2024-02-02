@@ -108,7 +108,11 @@ export const getMatch = (matchId) =>
 
 export const getMatchStats = (matchId) =>
   fetchApiMemoized(`/stats/v1/stats/matches/${matchId}`)
+export const getLobby = ({ memoized = true } = {}) => {
+  const fetchFn = memoized ? fetchApiMemoized : fetchApi
 
+  return fetchFn('/lobby/v4/lobbies/self')
+}
 export const getTeam = (teamId) => fetchApiMemoized(`/teams/v1/teams/${teamId}`)
 
 export const getSelf = ({ memoized = true } = {}) => {

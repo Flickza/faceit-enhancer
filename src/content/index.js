@@ -1,6 +1,7 @@
 import select from 'select-dom'
 import { IS_FACEIT_BETA } from '../shared/faceit-beta'
 import storage from '../shared/storage'
+import addEloPunishmentEvaluator from './features/add-elo-punishment-evaluator'
 import addEseaMatchesStatistics from './features/add-esea-matchstats-on-leauge-team-page'
 import addESEATeamsMatchesStatistics from './features/add-esea-matchstats-on-leauge-teams-page'
 import addHeaderLevelProgress from './features/add-header-level-progress'
@@ -174,6 +175,8 @@ function observeBody() {
         addEseaMatchesStatistics()
       } else if (pages.isESEATeamsProfile()) {
         addESEATeamsMatchesStatistics()
+      } else if (pages.isMatchmakingPage()) {
+        addEloPunishmentEvaluator()
       }
     }
   })
