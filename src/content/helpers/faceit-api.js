@@ -106,6 +106,9 @@ export const getPlayerStats = async (userId, game, size = 20) => {
 export const getMatch = (matchId) =>
   fetchApiMemoized(`/match/v2/match/${matchId}`)
 
+export const getMatchStats = (matchId) =>
+  fetchApiMemoized(`/stats/v1/stats/matches/${matchId}`)
+
 export const getTeam = (teamId) => fetchApiMemoized(`/teams/v1/teams/${teamId}`)
 
 export const getSelf = ({ memoized = true } = {}) => {
