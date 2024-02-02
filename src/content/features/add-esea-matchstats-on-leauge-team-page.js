@@ -33,6 +33,7 @@ export default async () => {
   }
 
   const recentMatchesTable = tableContainer
+
   if (hasFeatureAttribute(FEATURE_ATTRIBUTE, recentMatchesTable)) {
     return
   }
@@ -87,7 +88,30 @@ export default async () => {
                 {match.clientCustom.team2Score}
               </td>
               <td className={row.children[0].className}>
-                {match.clientCustom.map}
+                <div
+                  style={{ display: 'flex', flexDirection: 'row', gap: '3px' }}
+                >
+                  {match.clientCustom.map}{' '}
+                  <i>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      color="whiteMediumEmphasis"
+                      height="16"
+                      width="16"
+                      class="sc-klVQfs gYyteF"
+                    >
+                      <title>Veto</title>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm2 0c0 4.41 3.59 8 8 8s8-3.59 8-8-3.59-8-8-8-8 3.59-8 8zm9-3V7h-2v2h2zm0 8v-6h-2v6h2z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </i>
+                </div>
               </td>
             </>
           )
